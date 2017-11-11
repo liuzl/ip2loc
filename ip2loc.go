@@ -24,7 +24,7 @@ func Find(ip string) (string, error) {
 		return "", err
 	}
 	var low, high uint32 = 0, uint32(len(ipData) - 1)
-	for low <= high {
+	for low < high-1 {
 		m := (low + high) / 2
 		if p >= ipData[m].Begin && p <= ipData[m].End {
 			return ipData[m].Data, nil
